@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="data-latin.ttf">
+            <string>DataControl</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Programmer_Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXU-lG-oDk">
+                                <fontDescription key="fontDescription" name="DataControl" family="Data Control" pointSize="40"/>
+                                <state key="normal" title="Shake Me">
+                                    <color key="titleColor" red="0.15458227694034576" green="0.98624616861343384" blue="0.1195288747549057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shakeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yco-dM-39e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell me your programming problem and shake the phone" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B11-Ff-Ccv">
+                                <fontDescription key="fontDescription" name="DataControl" family="Data Control" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0051282051279999998" green="0.0051282051279999998" blue="0.0051282051279999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="B11-Ff-Ccv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L3e-e7-UbX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nXU-lG-oDk" secondAttribute="bottom" constant="20" id="LqS-th-vUd"/>
+                            <constraint firstItem="nXU-lG-oDk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f8G-6P-UWv"/>
+                            <constraint firstItem="B11-Ff-Ccv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="9:11" id="nsz-4N-q5G"/>
+                            <constraint firstItem="B11-Ff-Ccv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-40" id="s0J-42-MDr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="responseLabel" destination="B11-Ff-Ccv" id="XE3-Uq-KAm"/>
+                        <outlet property="shakeButton" destination="nXU-lG-oDk" id="ejd-7G-bK9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
