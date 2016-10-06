@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let options = Options()
+    var options = Options()
     var previousResponses = [Int]()
     var viewState:viewStates = .responses
     
@@ -26,6 +26,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLabelsAndButtonText()
+        
+        guard let myURL = NSURL(string: "http://0.0.0.0:8181/JSON") else { return }
+        guard let JSONData = NSData(contentsOf: myURL as URL) else { return }
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: JSONData as Data, options: JSONSerialization.ReadingOptions()) as? [String:[String]] else { return }
+            guard let jsonResponses = json["key"] else { return }
+            options.responses = jsonResponses
+        } catch {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
